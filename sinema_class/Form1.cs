@@ -27,46 +27,30 @@ namespace sinema_class
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (s.koltuk!=0)
+            if (radioButton1.Checked)
             {
-                if (radioButton1.Checked)
-                {
-                    s.kasa = s.kasa + 10;
-                }
-                else
-                {
-                    s.kasa = s.kasa + 20;
-                }
-                s.koltuk = s.koltuk - 1;
+                s.biletsatindirim = true;
             }
             else
             {
-                MessageBox.Show("Hata! Bütün Koltuklar Doludur, Bilet Satılamaz");
+                s.biletsatindirim = false;
             }
 
-
-            
-            
+            s.biletsat();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (s.koltuk < s.makskoltuk)
+            if (radioButton2.Checked)
             {
-                if (radioButton2.Checked)
-                {
-                    s.kasa = s.kasa - 10;
-                }
-                else
-                {
-                    s.kasa = s.kasa - 20;
-                }
-                s.koltuk = s.koltuk + 1;
+                s.biletiptalindirim = true;
             }
             else
             {
-                MessageBox.Show("Hata! Bütün Koltuklar Doludur, Bilet Satılamaz");
+                s.biletiptalindirim = false;
             }
+
+            s.biletiptalet();
         }
 
         private void button4_Click(object sender, EventArgs e)
